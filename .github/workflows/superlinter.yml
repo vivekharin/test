@@ -16,9 +16,3 @@ jobs:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: true
-          VALIDATE_PYTHON: true
-          VALIDATE_MARKDOWN: true
-          VALIDATE_YAML: true
-          VALIDATE_CHECKOV: false        # Turn off if you’re not using Terraform/CloudFormation
-          VALIDATE_NATURAL_LANGUAGE: false # Optional, disables spellcheck-style linting
-          DISABLE_ERRORS: false          # Keep as false to fail builds on lint errors
