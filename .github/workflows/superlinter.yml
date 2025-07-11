@@ -2,6 +2,9 @@ name: Super-Linter
 
 on: push
 
+permissions:
+  contents: read  # ✅ Fixes CHECKOV security issue (CKV2_GHA_1)
+
 jobs:
   super-lint:
     name: Lint code base
@@ -15,4 +18,8 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          # ✅ Enable only the linters you want
           VALIDATE_PYTHON: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_YAML: true
